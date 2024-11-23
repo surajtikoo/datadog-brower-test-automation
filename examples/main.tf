@@ -1,0 +1,23 @@
+module "browser_test" {
+  source                     = "../modules"
+  executation_time_zone      = var.executation_time_zone
+  executation_status         = var.executation_status
+  executation_start_time     = var.executation_start_time
+  executation_end_time       = var.executation_end_time
+  test_executation_frequency = var.test_executation_frequency
+  signin_button_xpath        = var.signin_button_xpath
+  signin_username_xpath      = var.signin_username_xpath
+  signin_password_xpath      = var.signin_password_xpath
+  testing_endpoint_url       = var.testing_endpoint_url
+  app_name                   = var.app_name
+  executation_day            = var.executation_day
+  env                        = var.env
+  steps                      = var.steps
+  xpaths                     = var.xpaths
+  datadog_api_key            = "dfsafa" 
+  datadog_app_key            = ""
+}
+
+
+
+
