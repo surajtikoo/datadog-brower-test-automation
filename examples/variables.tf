@@ -1,5 +1,4 @@
 variable "datadog_api_key" {
-  description = "provide the datadog api key"
   type        = string
 }
 variable "steps" {
