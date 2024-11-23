@@ -1,6 +1,5 @@
 variable "datadog_api_key" {
   description = "provide the datadog api key"
-  default     = "3f9a577350d073190f33bb87442b6677"
   type        = string
 }
 variable "steps" {
@@ -11,7 +10,6 @@ variable "xpaths" {
 
 variable "datadog_app_key" {
   description = "provide the datadog app key"
-  default     = "ac8db275a263292473871bb44f5db3e834b4ed7c"
   type        = string
 }
 
