@@ -14,7 +14,7 @@ module "browser_test" {
   env                        = var.env
   steps                      = var.steps
   xpaths                     = var.xpaths
-  datadog_api_key            = "dfsafa" 
+  datadog_api_key            = "" 
   datadog_app_key            = ""
 }
 
