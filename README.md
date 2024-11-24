@@ -69,7 +69,7 @@ module "browser_test" {
 
 
 ### **Configuration Files**
-browser-steps.tfvars
+1. browser-steps.tfvars
 
 ```hcl
 steps = [
@@ -96,7 +96,7 @@ steps = [
   },
 ]
 
-config.tfvars
+2. config.tfvars
 
 ```hcl
 env                        = "dev"
