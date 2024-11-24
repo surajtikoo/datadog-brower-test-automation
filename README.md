@@ -121,6 +121,11 @@ xpaths = {
 ```
 ---
 
+## **Command to Run**
+terraform apply -var-file=config.tfvars -var-file=browser-steps.tfvars -var "datadog_api_key=your_api_key" -var "datadog_app_key=your_app_key"
+
+---
+
 ## **Input Variables**
 | **Variable**    | **Description**                                    | **Type**    | **Default** | **Required** |
 |------------------|----------------------------------------------------|-------------|-------------|--------------|
