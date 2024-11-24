@@ -95,7 +95,7 @@ steps = [
     element_user_locator_key = "signin_username"
   },
 ]
-
+```
 2. config.tfvars
 
 ```hcl
