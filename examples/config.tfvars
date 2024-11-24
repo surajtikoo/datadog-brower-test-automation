@@ -1,6 +1,6 @@
 env                        = "dev"
 app_name                   = "testapp"
-testing_endpoint_url       = "https://learn.datadoghq.com"
+testing_endpoint_url       = "https://XXXXXX.com"
 signin_username_xpath      = "//*[@id=\"user[email]\"]"
 signin_password_xpath      = "//*[@id=\"user[password]\"]"
 signin_button_xpath        = "//*[@id=\"sign_in_bd50597424\"]/div[5]/button"

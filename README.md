@@ -67,6 +67,58 @@ module "browser_test" {
 }
 ```
 
+
+### **Configuration Files**
+browser-steps.tfvars
+
+```hcl
+steps = [
+   {
+    name = "Click login link"
+    type = "click"
+    use_element_locator = false
+    params = {
+      element = "{\"multiLocator\":{\"ab\":\"/*[local-name()=\\\"html\\\"][1]/*[local-name()=\\\"body\\\"][1]/*[local-name()=\\\"main\\\"][1]/*[local-name()=\\\"div\\\"][1]/*[local-name()=\\\"div\\\"][1]/*[local-name()=\\\"article\\\"][1]/*[local-name()=\\\"form\\\"][1]/*[local-name()=\\\"div\\\"][2]/*[local-name()=\\\"input\\\"][1]\",\"at\":\"/descendant::*[@name=\\\"user[password]\\\" and @type=\\\"password\\\"]\",\"cl\":\"/descendant::*[contains(concat(' ', normalize-space(@class), ' '), \\\" sign-in__form \\\")]/descendant::*[contains(concat(' ', normalize-space(@class), ' '), \\\" form__control \\\")][2]\",\"clt\":\"/descendant::*[contains(concat(' ', normalize-space(@class), ' '), \\\" sign-in__form \\\")]/descendant::*[contains(concat(' ', normalize-space(@class), ' '), \\\" form__control \\\")][2]\",\"co\":\"[{\\\"text\\\":\\\" password \\\",\\\"textType\\\":\\\"innerText\\\"}]\",\"ro\":\"//*[@id=\\\"user[password]\\\"]\"},\"targetOuterHTML\":\"\\u003cinput type=\\\"password\\\" id=\\\"user[password]\\\" name=\\\"user[password]\\\" placeholder=\\\"Password\\\" autocapitalize=\\\"off\\\" autocomplete=\\\"off\\\" autocorrect=\\\"off\\\" spellcheck=\\\"false\\\" required=\\\"\\\" class=\\\"form__control\\\" a\",\"url\":\"https://learn.datadoghq.com/users/sign_in\"}"
+      value   = ""
+    }
+    element_user_locator_key = "no_path"
+    
+  },
+  {
+    name                = "Input Username"
+    type                = "typeText"
+    use_element_locator = true
+    params = {
+      element    = "{\"multiLocator\":{\"ab\":\"/*[local-name()=\\\"html\\\"][1]/*[local-name()=\\\"body\\\"][1]/*[local-name()=\\\"main\\\"][1]/*[local-name()=\\\"div\\\"][1]/*[local-name()=\\\"div\\\"][1]/*[local-name()=\\\"article\\\"][1]/*[local-name()=\\\"form\\\"][1]/*[local-name()=\\\"div\\\"][1]/*[local-name()=\\\"input\\\"][1]\",\"at\":\"/descendant::*[@name=\\\"user[email]\\\" and @value=\\\"\\\"]\",\"cl\":\"/descendant::*[contains(concat(' ', normalize-space(@class), ' '), \\\" sign-in__form \\\")]/descendant::*[contains(concat(' ', normalize-space(@class), ' '), \\\" form__control \\\")][1]\",\"clt\":\"/descendant::*[contains(concat(' ', normalize-space(@class), ' '), \\\" sign-in__form \\\")]/descendant::*[contains(concat(' ', normalize-space(@class), ' '), \\\" form__control \\\")][1]\",\"co\":\"[{\\\"text\\\":\\\" email \\\",\\\"textType\\\":\\\"innerText\\\"}]\",\"ro\":\"//*[@id=\\\"user[email]\\\"]\"},\"targetOuterHTML\":\"<input type=\\\"email\\\" id=\\\"user[email]\\\" name=\\\"user[email]\\\" value=\\\"\\\" placeholder=\\\"Email\\\" autocapitalize=\\\"off\\\" autocomplete=\\\"off\\\" autocorrect=\\\"off\\\" spellcheck=\\\"false\\\" required=\\\"\\\" class=\\\"form__control\\\" aria\",\"url\":\"https://learn.datadoghq.com/users/sign_in\"}"
+      value      = "test@gmail.com" # "{{ USERNAME  }}@gmail.com" replace this with your glbal variable
+    }
+    element_user_locator_key = "signin_username"
+  },
+]
+
+```hcl
+config.tfvars
+
+env                        = "dev"
+app_name                   = "testapp"
+testing_endpoint_url       = "https://XXXXXX.com"
+signin_username_xpath      = "//*[@id=\"user[email]\"]"
+signin_password_xpath      = "//*[@id=\"user[password]\"]"
+signin_button_xpath        = "//*[@id=\"sign_in_bd50597424\"]/div[5]/button"
+test_executation_frequency = "86400" // This is miliseconds.It means 1 day
+executation_day            = "6"     // IT means 5 day
+executation_start_time     = "13:30"
+executation_end_time       = "13:31"
+executation_status         = "live"
+executation_time_zone      = "Europe/Amsterdam"
+
+xpaths = {
+    no_path         =  ""
+    signin_username = "//*[@id='email']"
+    signin_password = "//*[@id='password']"
+    submit_button   = "//*[@id='submit_button']"
+  }
+```
 ---
 
 ## **Input Variables**
