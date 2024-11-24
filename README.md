@@ -121,13 +121,27 @@ xpaths = {
 ```
 ---
 
+env                        = "dev"
+app_name                   = "testapp"
+testing_endpoint_url       = "https://XXXXXX.com"
+signin_username_xpath      = "//*[@id=\"user[email]\"]"
+signin_password_xpath      = "//*[@id=\"user[password]\"]"
+signin_button_xpath        = "//*[@id=\"sign_in_bd50597424\"]/div[5]/button"
+test_executation_frequency = "86400" // This is miliseconds.It means 1 day
+executation_day            = "6"     // IT means 5 day
+executation_start_time     = "13:30"
+executation_end_time       = "13:31"
+executation_status         = "live"
+executation_time_zone      = "Europe/Amsterdam"
+
+
 ## **Input Variables**
 | **Variable**    | **Description**                                    | **Type**    | **Default** | **Required** |
 |------------------|----------------------------------------------------|-------------|-------------|--------------|
 | `test_name`      | Name of the synthetic browser test.                | `string`    | `null`      | Yes          |
-| `steps`          | List of steps for the browser test.                | `list(map)` | `[]`        | Yes          |
-| `locations`      | List of Datadog locations to run the test.         | `list`      | `["aws:us-east-1"]` | Yes |
-| `retry_attempts` | Number of retries on failure.                      | `number`    | `2`         | No           |
+| `env`          | Provide the environment name.                | `string`         | Yes          |
+| `signin_username_xpath`      | username xpath.         | `list`      | `["aws:us-east-1"]` | Yes |
+| `signin_password_xpath` | signin user xpath.                      | `string`    | `xxxxxx`         | No           |
 | `tags`           | Tags for the synthetic test.                       | `list`      | `[]`        | No           |
 
 ---

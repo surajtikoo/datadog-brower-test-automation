@@ -7,6 +7,11 @@ variable "steps" {
 variable "xpaths" {
 }
 
+variable "test_name" {
+  description = "provide the test name"
+  type        = string
+}
+
 variable "datadog_app_key" {
   description = "provide the datadog app key"
   type        = string

@@ -35,7 +35,7 @@ locals {
 
 # Example Usage (Synthetics Browser test)
 resource "datadog_synthetics_test" "datadog_brower_test" {
-  name       = "A Datadog website browser Test"
+  name       = "${var.test_name}-${var.test_name}-synthetic-test"
   type       = "browser"
   status     = var.executation_status
   message    = "Notify @qa"

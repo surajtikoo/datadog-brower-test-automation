@@ -1,5 +1,6 @@
 module "browser_test" {
   source                     = "../modules"
+  test_name                  = var.test_name
   executation_time_zone      = var.executation_time_zone
   executation_status         = var.executation_status
   executation_start_time     = var.executation_start_time
@@ -16,6 +17,7 @@ module "browser_test" {
   xpaths                     = var.xpaths
   datadog_api_key            = "" 
   datadog_app_key            = ""
+
 }
 
 
