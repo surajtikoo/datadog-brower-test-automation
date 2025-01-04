@@ -4,7 +4,6 @@
 ## **Overview**
 This Terraform module simplifies the creation of Datadog Synthetic Browser Tests by dynamically generating all required steps based on user input. The module focuses on defining test steps, locations, and parameters, reducing repetitive configuration and making test creation faster and more efficient.
 
-let element = document.querySelector(vars.XPATH.substring(vars.XPATH.indexOf("td")).replace(/@/g, "").replace(/"([^"]*)"/g, (_, v) => `"${CSS.escape(v)}"`));
 
 ---
 
