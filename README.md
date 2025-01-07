@@ -15,26 +15,21 @@ This Terraform module simplifies the creation of Datadog Synthetic Browser Tests
 
 <p id="demo"></p>
 
-<script>
-const executionDate = new Date("2024-09-10");
+// Define the execution date
+const executionDate = new Date("2024-10-10");
 
-// Get the last date of the month (always 30 if it exceeds 30)
-executionDate.setMonth(executionDate.getMonth() + 1);
-executionDate.setDate(0); // Set to the last day of the month
-let lastDayOfMonth = executionDate.getDate();
-if (lastDayOfMonth > 30) lastDayOfMonth = 30;
+// Determine the last day of the month, considering only up to the 30th
+let lastDayOfMonth = new Date(executionDate.getFullYear(), executionDate.getMonth() + 1, 0);
+if (lastDayOfMonth.getDate() > 30) {
+    lastDayOfMonth.setDate(30);
+}
+console.log("Last Date of the Month:", lastDayOfMonth.toDateString());
 
-// Adjust the executionDate to the new last day
-executionDate.setDate(lastDayOfMonth);
-console.log("Last Date of the Month:", executionDate.toDateString());
-
-// Get the next invoice date by adding 60 days
-const nextInvoiceDate = new Date(executionDate);
+// Calculate the next invoice date by adding 60 days
+const nextInvoiceDate = new Date(lastDayOfMonth);
 nextInvoiceDate.setDate(nextInvoiceDate.getDate() + 60);
 console.log("Next Invoice Date:", nextInvoiceDate.toDateString());
 
-
-</script>
 
 </body>
 </html>
