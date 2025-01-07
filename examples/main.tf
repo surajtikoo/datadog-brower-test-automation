@@ -20,21 +20,10 @@ module "browser_test" {
 
 }
 
-const xpathExpression = "//span[@date-nsps-tm='field_input' and @data-field-type='date']";
-const result = document.evaluate(xpathExpression, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-const element = result.singleNodeValue;
-console.log(element);
+// Format the output as MM/DD/YYYY
+let formattedDate = (nextInvoice.getMonth() + 1).toString().padStart(2, '0') + "/" +
+                    nextInvoice.getDate().toString().padStart(2, '0') + "/" +
+                    nextInvoice.getFullYear();
 
-
-const executionDate = new Date("2024-12-01"); // Example start date
-
-// Get the last day of the month
-let lastDay = new Date(executionDate.getFullYear(), executionDate.getMonth() + 1, 0);
-
-// Add 60 days to the last day of the month
-let nextInvoice = new Date(lastDay);
-nextInvoice.setDate(nextInvoice.getDate() + 60);
-
-// Log the next invoice date
-console.error("Next Invoice Date:", nextInvoice.toDateString());
+console.error("Next Invoice Date:", formattedDate);
 
