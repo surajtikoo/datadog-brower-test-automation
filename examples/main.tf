@@ -21,5 +21,25 @@ module "browser_test" {
 }
 
 
+// Define the execution date
+const executionDate = new Date("2024-10-10");
+
+// Determine the last day of the month, considering only up to the 30th
+let lastDayOfMonth = new Date(executionDate.getFullYear(), executionDate.getMonth() + 1, 0);
+if (lastDayOfMonth.getDate() > 30) {
+    lastDayOfMonth.setDate(30);
+}
+console.log("Last Date of the Month:", lastDayOfMonth.toDateString());
+
+// Calculate the next invoice date by adding 60 days
+const nextInvoiceDate = new Date(lastDayOfMonth);
+nextInvoiceDate.setDate(nextInvoiceDate.getDate() + 60);
+
+// Adjust the next invoice date to the 30th if it falls to the 29th
+if (nextInvoiceDate.getDate() === 29) {
+    nextInvoiceDate.setDate(30);
+}
+console.log("Next Invoice Date:", nextInvoiceDate.toDateString());
+
 
 
