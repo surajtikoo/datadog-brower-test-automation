@@ -20,6 +20,12 @@ module "browser_test" {
 
 }
 
+const xpathExpression = "//span[@date-nsps-tm='field_input' and @data-field-type='date']";
+const result = document.evaluate(xpathExpression, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+const element = result.singleNodeValue;
+console.log(element);
+
+
 const executionDate = new Date("2024-12-01"); // Example start date
 
 // Get the last day of the month
