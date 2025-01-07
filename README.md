@@ -2,7 +2,43 @@
 # **Datadog Synthetic Browser Test Terraform Module**
 
 ## **Overview**
-This Terraform module simplifies the creation of Datadog Synthetic Browser Tests by dynamically generating all required steps based on user input. The module focuses on defining test steps, locations, and parameters, reducing repetitive configuration and making test creation faster and more efficient.
+This Terraform module simplifies the creation of Datadog Synthetic Browser Tests by dynamically generating all required steps based on user input. The module focuses on defining test steps, locations, and parameters, reducing repetitive configuration and making test creation faster and more efficient
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My Heading</h2>
+
+<p>Play around with the code and click on the "Run" button to view the result.</p>
+
+<p id="demo"></p>
+
+<script>
+const executionDate = new Date("2024-09-10");
+
+// Get the last date of the month (always 30 if it exceeds 30)
+executionDate.setMonth(executionDate.getMonth() + 1);
+executionDate.setDate(0); // Set to the last day of the month
+let lastDayOfMonth = executionDate.getDate();
+if (lastDayOfMonth > 30) lastDayOfMonth = 30;
+
+// Adjust the executionDate to the new last day
+executionDate.setDate(lastDayOfMonth);
+console.log("Last Date of the Month:", executionDate.toDateString());
+
+// Get the next invoice date by adding 60 days
+const nextInvoiceDate = new Date(executionDate);
+nextInvoiceDate.setDate(nextInvoiceDate.getDate() + 60);
+console.log("Next Invoice Date:", nextInvoiceDate.toDateString());
+
+
+</script>
+
+</body>
+</html>
+
 
 
 ---
