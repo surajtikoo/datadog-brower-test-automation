@@ -20,12 +20,15 @@ module "browser_test" {
 
 }
 
-const executionDate = new Date("2024-12-05");
+const executionDate = new Date("2024-12-01"); // Example start date
+
+// Get the last day of the month
 let lastDay = new Date(executionDate.getFullYear(), executionDate.getMonth() + 1, 0);
-lastDay.setDate(lastDay.getDate() > 30 ? 30 : lastDay.getDate());
+
+// Add 60 days to the last day of the month
 let nextInvoice = new Date(lastDay);
 nextInvoice.setDate(nextInvoice.getDate() + 60);
-if (nextInvoice.getMonth() === 1) nextInvoice.setDate(new Date(nextInvoice.getFullYear(), 2, 0).getDate());
-else nextInvoice.setDate(30);
+
+// Log the next invoice date
 console.error("Next Invoice Date:", nextInvoice.toDateString());
 
