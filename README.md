@@ -4,20 +4,6 @@
 ## **Overview**
 This Terraform module simplifies the creation of Datadog Synthetic Browser Tests by dynamically generating all required steps based on user input. The module focuses on defining test steps, locations, and parameters, reducing repetitive configuration and making test creation faster and more efficient
 
-// Define the start date
-const startDate = new Date("01/01/2025");
-
-// Add 4 years to the start date
-const yearsToAdd = 4;
-const newDate = new Date(startDate);
-newDate.setFullYear(startDate.getFullYear() + yearsToAdd);
-
-// Output the new date
-console.log("Start Date:", startDate.toDateString());
-console.log("Date after 4 years:", newDate.toDateString());
-
----
-
 ## **Features**
 - Dynamically generates steps for browser tests.
 - Scalable and reusable for multiple test configurations.
