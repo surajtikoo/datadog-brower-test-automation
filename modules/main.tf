@@ -3,50 +3,6 @@
 # This synethic monitoring is created for the web browser testing.
 ##----------------------------------------------------------------------------------##
 
-# Terraform 0.13+ uses the Terraform Registry:
-terraform {
-  required_providers {
-    datadog = {
-      source = "DataDog/datadog"
-    }
-  }
-}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parent Window</title>
-</head>
-<body>
-    <script>
-        // Open the popup window
-        const popup = window.open('popup.html', 'PopupWindow', 'width=500,height=400');
-
-        if (popup) {
-            // Wait for the popup to load
-            setTimeout(() => {
-                popup.postMessage({
-                    country: 'India',
-                    capital: 'New Delhi',
-                    population: '1.4 billion'
-                }, "*");
-            }, 2000); // Adjust delay if needed
-
-            // Close the popup after 5 seconds
-            setTimeout(() => {
-                popup.close();
-                console.log("Popup closed automatically!");
-            }, 5000);
-        } else {
-            console.error("Popup blocked!");
-        }
-    </script>
-</body>
-</html>
-
-
 # Configure the Datadog provider
 provider "datadog" {
   api_key = var.datadog_api_key
